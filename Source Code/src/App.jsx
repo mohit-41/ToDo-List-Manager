@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { v4 as uuidv4 } from 'uuid';
-// To use => uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
 
 function App() {
 
@@ -62,8 +61,7 @@ function App() {
     let index = todos.findIndex(item => {
       return item.id === id;
     })
-    // we can't directly write 
-    // let newTodos= todos   becuase then it will be passed directly and not as an new object so re-rendering won'thappen and line-through action will not take place after ticking the checkbox
+   
     let newTodos = [...todos];
     newTodos[index].isCompleted = !newTodos[index].isCompleted;
     setTodos(newTodos);
